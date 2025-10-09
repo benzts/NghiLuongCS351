@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2256676094317356339, guid: d3821319fa5cf73428783f9bda3d1ef1, type: 3}
       propertyPath: m_Name
-      value: Vertical Wall
+      value: Vertical Wall Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256676094317356339, guid: d3821319fa5cf73428783f9bda3d1ef1, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7692429569382731596, guid: d3821319fa5cf73428783f9bda3d1ef1, type: 3}
       propertyPath: m_RootOrder
@@ -17,11 +21,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7692429569382731596, guid: d3821319fa5cf73428783f9bda3d1ef1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.976537
+      value: 5.3222466
       objectReference: {fileID: 0}
     - target: {fileID: 7692429569382731596, guid: d3821319fa5cf73428783f9bda3d1ef1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -22.580029
+      value: 0.016869485
       objectReference: {fileID: 0}
     - target: {fileID: 7692429569382731596, guid: d3821319fa5cf73428783f9bda3d1ef1, type: 3}
       propertyPath: m_LocalPosition.z

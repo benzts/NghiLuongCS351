@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Pixel Adventure 1/Scenes/Demo.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TankPlayerFinish.unity
     guid: 172f63bf0df4f394c8364bf3e4ec6b26
+  - enabled: 1
+    path: Assets/Scenes/PlatformerStart.unity
+    guid: 83b8ac4bdc702b549b896e04ba627b89
   m_configObjects: {}
