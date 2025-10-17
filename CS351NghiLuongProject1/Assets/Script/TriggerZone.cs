@@ -5,26 +5,27 @@ using TMPro;
 
 public class TriggerZone : MonoBehaviour
 {
-    // Start is called before the first frame update
     public TMP_Text output;
-    public string TextToDisplay;
-    
-    void Start()
-    {
-       
-    }
+    public string textToDisplay;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-      if (collision.gameObject.tag=="Player")
+        if (collision.gameObject.tag == "Player")
         {
-            output.text = TextToDisplay;
+            output.text = textToDisplay;
+            Destroy(gameObject, 2.0f);
         }
-
+        
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //
     }
 }
