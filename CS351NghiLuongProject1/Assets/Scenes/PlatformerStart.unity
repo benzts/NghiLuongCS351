@@ -7813,6 +7813,27 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!95 &1064759016
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064759014}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 015abaec734232244b5c57d0f69ca284, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!82 &1064759021
 AudioSource:
   m_ObjectHideFlags: 0
@@ -20186,16 +20207,20 @@ PrefabInstance:
       value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 716061586353285088, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6367560908665664636, guid: 2739e24ee1e66d341a99f4fcbad6282a, type: 3}
+    - target: {fileID: 716061586353285088, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
       propertyPath: m_Color.b
-      value: 0.3015779
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 716061586353285088, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
       propertyPath: m_Color.g
-      value: 0.22745098
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 716061586353285088, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
       propertyPath: m_Color.r
-      value: 0.81960785
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 716061586353285089, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
       propertyPath: jumpsound
@@ -20210,12 +20235,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 716061586353285091, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 716061586353285091, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 716061586353285091, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 716061586353285091, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.204
       objectReference: {fileID: 0}
     - target: {fileID: 716061586353285091, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -4.566
       objectReference: {fileID: 0}
     - target: {fileID: 716061586353285091, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
       propertyPath: m_LocalPosition.z
