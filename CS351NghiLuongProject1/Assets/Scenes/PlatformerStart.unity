@@ -7854,7 +7854,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1.1755853
+  MinDistance: 1.430751
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -20202,6 +20202,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1064759015, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064759015, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8644645
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064759015, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064759015, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.08223224
+      objectReference: {fileID: 0}
     - target: {fileID: 1064759020, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
       propertyPath: lowestY
       value: -15
@@ -20236,11 +20252,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 716061586353285091, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 716061586353285091, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 716061586353285091, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
       propertyPath: m_LocalScale.z
@@ -20248,15 +20264,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 716061586353285091, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.204
+      value: 0.438
       objectReference: {fileID: 0}
     - target: {fileID: 716061586353285091, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.566
+      value: -3.674
       objectReference: {fileID: 0}
     - target: {fileID: 716061586353285091, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 716061586353285091, guid: c4164149798bb7f4c8192ffab109b32e, type: 3}
       propertyPath: m_LocalRotation.w

@@ -20,10 +20,10 @@ public class CamFollowPlayer : MonoBehaviour
         //implement smooth camera movement
         transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x, player.transform.position.y + 1, transform.position.z), Time.deltaTime * 5);
         //make camera look ahead a little bit of player when player is moving without camera jittering
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
-        {
-            transform.position = new Vector3(player.transform.position.x + (Input.GetKey(KeyCode.D) ? 1 : -1) * 0.5f, player.transform.position.y + 1, transform.position.z);
-        }
+        //if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        //{
+            //transform.position = new Vector3(player.transform.position.x + (Input.GetKey(KeyCode.D) ? 1 : -1) * 0.5f, player.transform.position.y + 1, transform.position.z);
+        //}
 
 
 

@@ -24,11 +24,14 @@ public class PlatformerPlayerController : MonoBehaviour
     public AudioClip jumpsound;
     private AudioSource playerAudio;
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         // Get the Rigidbody2D component
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         if (groundCheck == null)
         {
@@ -54,6 +57,13 @@ public class PlatformerPlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
+        //set animator parameters XVelocityabs to absolute value of x velocity
+        animator.SetFloat("XVelocityAbs", Mathf.Abs(rb.velocity.x));
+
+        animator.SetFloat("YVelocity", rb.velocity.y);
+
+        animator.SetBool("OnGround", isGrounded);
+
         // Move the player
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
         // Check if the player is grounded
@@ -62,11 +72,11 @@ public class PlatformerPlayerController : MonoBehaviour
         //ensure the player faces the correct direction
         if (horizontalInput > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(2, 2, 1);
         }
         else if (horizontalInput < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-2, 2, 1);
         }
     }
 }
