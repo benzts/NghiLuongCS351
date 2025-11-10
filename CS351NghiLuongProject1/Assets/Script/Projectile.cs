@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    
+
     private Rigidbody2D rb;
 
     public float speed = 20f;
@@ -19,11 +21,13 @@ public class Projectile : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
+
         }
         if (hitInfo.gameObject.tag != "Player")
         {
             //spawn impact effect
             Instantiate(ImpactEffect, transform.position, transform.rotation);
+            
 
             Destroy(gameObject);
         }

@@ -64,8 +64,7 @@ public class PlatformerPlayerController : MonoBehaviour
 
         animator.SetBool("OnGround", isGrounded);
 
-        // Move the player
-        rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+        
         // Check if the player is grounded
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -77,6 +76,12 @@ public class PlatformerPlayerController : MonoBehaviour
         else if (horizontalInput < 0)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+
+        if (!PlayerHealth.hitRecently)
+        {
+            // Allow normal movement
+            rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
         }
     }
 }
