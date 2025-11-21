@@ -1,0 +1,100 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Profiling;
+
+
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Animator))]
+
+public class EnemyMovingWalkChase : MonoBehaviour
+{
+    public float chaseRange = 5f;
+
+    public float moveSpeed = 2f;
+
+    private Transform playerTransform;
+
+    private Rigidbody2D rb;
+
+    private Animator animator;
+
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        playerTransform = GameObject.FindWithTag("Player").transform;
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Vector2 playerDirection = playerTransform.position - transform.position;
+
+        float distanceToPlayer = playerDirection.magnitude;
+
+        // Check if the player is within chase range
+        if (distanceToPlayer <= chaseRange)
+        {
+            playerDirection.Normalize();
+
+            playerDirection.y = 0f;
+
+            FacePlayer(playerDirection);
+
+            if (IsGroundAhead())
+            {
+                //move towards the player
+                MoveTowardsPlayer(playerDirection);
+            }
+            else
+            {
+                // Stop moving if there's no ground ahead
+                StopMoving();
+            }
+        }
+    }
+    bool IsGroundAhead()
+    {
+        float groundCheckDistance = 2.0f;
+        LayerMask groundLayer = LayerMask.GetMask("Ground");
+
+        Vector2 EnemyFacingDirection = transform.rotation.y == 0 ? Vector2.left : Vector2.right;
+
+        //raycast to check for ground ahead
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down + EnemyFacingDirection, groundCheckDistance, groundLayer);
+
+        return hit.collider != null;
+    }
+
+    private void FacePlayer(Vector2 playerDirection)
+    {
+        if (playerDirection.x < 0)
+        {
+            //face left
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else
+        {
+            //face right
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+    }
+
+        private void MoveTowardsPlayer(Vector2 playerDirection)
+        {     
+        
+            rb.velocity = new Vector2(playerDirection.x * moveSpeed, rb.velocity.y);
+            animator.SetBool("IsMoving", true);
+        }
+        private void StopMoving()
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            animator.SetBool("IsMoving", false);
+        }
+}
+

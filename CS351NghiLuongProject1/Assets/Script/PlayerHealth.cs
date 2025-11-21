@@ -18,10 +18,20 @@ public class PlayerHealth : MonoBehaviour
 
     public float hitRecoveryTime = 0.5f;
 
+    private AudioSource playerAudio;
+    public AudioClip playerHitSound;
+    public AudioClip playerDeathSound;
+
+    private Animator animator;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        playerAudio = GetComponent<AudioSource>();
+
+        animator = GetComponent<Animator>();
+
         rb = GetComponent<Rigidbody2D>();
 
         if (rb == null)
@@ -61,6 +71,9 @@ public class PlayerHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(hitRecoveryTime);
         hitRecently = false;
+        //reset hit animation
+        animator.SetBool("Hit", false);
+
     }
 
     public void TakeDamage(int damage)
@@ -68,14 +81,22 @@ public class PlayerHealth : MonoBehaviour
         Health -= damage;
         healthBar.setValue(Health);
 
-        //play hurt sound effect here
-        //play hurt animation here
-
+        
         if (Health <= 0)
         {
             Die();
+            
+
         }
-        
+        else
+        {
+            //play hit sound effect here
+            playerAudio.PlayOneShot(playerHitSound, 0.7f);
+
+            //play hit animation here
+            animator.SetBool("Hit",true);
+        }
+
 
     }
 
@@ -83,13 +104,14 @@ public class PlayerHealth : MonoBehaviour
     {
         ScoreManager.gameOver = true;
         //play death sound effect here
+        
         //play death animation here
 
         //Instantiate death effect
-        //GameObject deathEffect = Instantiate(PlayerDeathEffect, transform.position, Quaternion.identity);
+        GameObject deathEffect = Instantiate(PlayerDeathEffect, transform.position, Quaternion.identity);
 
         //destroy death effect after 1 second
-        //Destroy(deathEffect, 1f);
+        Destroy(deathEffect, 1f);
 
 
         gameObject.SetActive(false);

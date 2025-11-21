@@ -64,6 +64,9 @@ public class Enemy : MonoBehaviour
         if (animator != null)
         {
             animator.SetBool("Hurt", true);
+            //reset hurt animation after a short delay
+            StartCoroutine(ResetHurtAnimation());
+            
         }
 
         if (health <= 0)
@@ -74,6 +77,13 @@ public class Enemy : MonoBehaviour
         
 
     }
+    IEnumerator ResetHurtAnimation()
+    {
+        yield return new WaitForSeconds(0.3f);
+        animator.SetBool("Hurt", false);
+    }
+
+
 
     public void Die()
     {
