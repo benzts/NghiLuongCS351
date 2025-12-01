@@ -19,7 +19,7 @@ public class EnemyMovingWalkChase : MonoBehaviour
 
     private Animator animator;
 
-
+    private SpriteRenderer sr;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class EnemyMovingWalkChase : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerTransform = GameObject.FindWithTag("Player").transform;
-
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -55,7 +55,13 @@ public class EnemyMovingWalkChase : MonoBehaviour
             {
                 // Stop moving if there's no ground ahead
                 StopMoving();
+                Debug.Log("No ground ahead, stopping movement.");
             }
+        }
+        else
+        {
+            // Stop moving if the player is out of range
+            StopMoving();
         }
     }
     bool IsGroundAhead()
@@ -76,12 +82,12 @@ public class EnemyMovingWalkChase : MonoBehaviour
         if (playerDirection.x < 0)
         {
             //face left
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            sr.flipX = false;
         }
-        else
+        else if (playerDirection.x > 0)
         {
             //face right
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            sr.flipX = true;
         }
     }
 
