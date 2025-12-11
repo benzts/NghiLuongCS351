@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f19a0e29cea29438523fefbf078ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
+  health: 100
   deathEffect: {fileID: 3660844744486180239, guid: 6a0ac882786e5544db1d58a3814e6986, type: 3}
   damage: 10
 --- !u!95 &3325660066541232847
@@ -270,7 +270,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2035781988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5739e4b12cbdeb43b95b7d9c8c9585f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseRange: 5
+  chaseRange: 10
   moveSpeed: 2
 --- !u!1001 &384952678604570432
 PrefabInstance:
